@@ -33,7 +33,7 @@ def print_table(inventory, order):
         display_inventory(inv)
 
 def import_inventory(inventory, filename):
-    f = open(filename, "r")
+    f = open(filename, "r", encoding = 'utf-8')
     mylist = f.read().split(',')
     for i in mylist:
         if i in inventory:
@@ -49,7 +49,7 @@ def export_inventory(inventory, filename):
     f.close
 
 display_inventory(inv)
-import_inventory(inv,"inventory.csv")
+import_inventory(inv, "inventory.csv")
 display_inventory(inv)
 add_to_inventory(inv, dragon_loot)
 display_inventory(inv)
